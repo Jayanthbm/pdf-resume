@@ -39,25 +39,31 @@ const PdfDocument = ({ data, template }) => {
           {mobile && (
             <View
               style={{
+                display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
-                fontSize: 12,
-                color: "#000",
-                textDecoration: "none",
-                lineHeight: 1.3,
                 marginRight: 4,
               }}
               key="mobile"
             >
               <Image
                 style={{
-                  width: 16,
+                  width: 14,
                   height: 14,
                   marginRight: 5,
                 }}
                 src={MobileIcon}
               />
-              <Text>{mobile}</Text>
+              <Text
+                style={{
+                  fontSize: 12,
+                  color: "#000",
+                  lineHeight: 1.3,
+                  textDecoration: "none",
+                }}
+              >
+                {mobile}
+              </Text>
             </View>
           )}
           {email && (
@@ -65,23 +71,28 @@ const PdfDocument = ({ data, template }) => {
               style={{
                 flexDirection: "row",
                 alignItems: "center",
-                fontSize: 12,
-                color: "#000",
-                textDecoration: "none",
-                lineHeight: 1.3,
                 marginRight: 4,
               }}
               key="email"
             >
               <Image
                 style={{
-                  width: 16,
-                  height: 16,
+                  width: 14,
+                  height: 14,
                   marginRight: 5,
                 }}
                 src={EmailIcon}
               />
-              <Text>{email}</Text>
+              <Text
+                style={{
+                  fontSize: 12,
+                  color: "#000",
+                  lineHeight: 1.3,
+                  textDecoration: "none",
+                }}
+              >
+                {email}
+              </Text>
             </View>
           )}
         </View>
@@ -99,7 +110,7 @@ const PdfDocument = ({ data, template }) => {
               style={{
                 flexDirection: "row",
                 alignItems: "center",
-                fontSize: 12,
+                fontSize: 11,
                 color: "#000",
                 textDecoration: "none",
                 lineHeight: 1.3,
@@ -110,8 +121,8 @@ const PdfDocument = ({ data, template }) => {
             >
               <Image
                 style={{
-                  width: 16,
-                  height: 16,
+                  width: 12,
+                  height: 12,
                   marginRight: 5,
                 }}
                 src={link.icon}
@@ -122,8 +133,9 @@ const PdfDocument = ({ data, template }) => {
         </View>
         <Text
           style={{
-            fontSize: 16,
+            fontSize: 15,
             padding: 5,
+            fontWeight: "600",
           }}
         >
           Technical Skills
@@ -149,16 +161,16 @@ const PdfDocument = ({ data, template }) => {
             >
               <Text
                 style={{
-                  fontSize: 14,
+                  fontSize: 13,
                   marginBottom: 3,
+                  fontWeight: "400",
                 }}
               >
                 {category} :
               </Text>
               <Text
                 style={{
-                  fontSize: 14,
-                  lineHeight: 1.3,
+                  fontSize: 13,
                   paddingLeft: 10,
                 }}
               >
@@ -170,8 +182,9 @@ const PdfDocument = ({ data, template }) => {
         </View>
         <Text
           style={{
-            fontSize: 16,
+            fontSize: 15,
             padding: 5,
+            fontWeight: "600",
           }}
         >
           Work Experience
@@ -197,7 +210,7 @@ const PdfDocument = ({ data, template }) => {
               >
                 <Text
                   style={{
-                    fontSize: 14,
+                    fontSize: 13,
                     marginBottom: 3,
                   }}
                 >
@@ -205,7 +218,7 @@ const PdfDocument = ({ data, template }) => {
                 </Text>
                 <Text
                   style={{
-                    fontSize: 14,
+                    fontSize: 13,
                     marginBottom: 3,
                   }}
                 >
@@ -223,9 +236,7 @@ const PdfDocument = ({ data, template }) => {
                 <Text
                   style={{
                     color: "#333333",
-                    fontSize: 14,
-                    fontStyle: "italic",
-                    lineHeight: 1.2,
+                    fontSize: 12,
                     paddingLeft: 5,
                     marginBottom: 5,
                   }}
@@ -235,9 +246,7 @@ const PdfDocument = ({ data, template }) => {
                 <Text
                   style={{
                     color: "#333333",
-                    fontSize: 14,
-                    fontStyle: "italic",
-                    lineHeight: 1.2,
+                    fontSize: 12,
                     paddingLeft: 5,
                     marginBottom: 5,
                   }}
@@ -251,9 +260,9 @@ const PdfDocument = ({ data, template }) => {
                     <Text
                       key={i}
                       style={{
-                        fontSize: 14,
-                        lineHeight: 1.3,
+                        fontSize: 12,
                         paddingLeft: 10,
+                        marginBottom:4
                       }}
                     >
                       • {task}
@@ -266,8 +275,9 @@ const PdfDocument = ({ data, template }) => {
         </View>
         <Text
           style={{
-            fontSize: 16,
+            fontSize: 15,
             padding: 5,
+            fontWeight: "600",
           }}
         >
           Education
@@ -293,7 +303,7 @@ const PdfDocument = ({ data, template }) => {
               >
                 <Text
                   style={{
-                    fontSize: 14,
+                    fontSize: 13,
                     marginBottom: 3,
                   }}
                 >
@@ -301,7 +311,7 @@ const PdfDocument = ({ data, template }) => {
                 </Text>
                 <Text
                   style={{
-                    fontSize: 14,
+                    fontSize: 13,
                     marginBottom: 3,
                   }}
                 >
@@ -319,9 +329,7 @@ const PdfDocument = ({ data, template }) => {
                 <Text
                   style={{
                     color: "#333333",
-                    fontSize: 14,
-                    fontStyle: "italic",
-                    lineHeight: 1.2,
+                    fontSize: 12,
                     paddingLeft: 5,
                     marginBottom: 5,
                   }}
@@ -333,9 +341,7 @@ const PdfDocument = ({ data, template }) => {
                 <Text
                   style={{
                     color: "#333333",
-                    fontSize: 14,
-                    fontStyle: "italic",
-                    lineHeight: 1.2,
+                    fontSize: 12,
                     paddingLeft: 5,
                     marginBottom: 5,
                   }}
@@ -370,7 +376,6 @@ const PdfDocument = ({ data, template }) => {
             <Text
               style={{
                 fontSize: 20,
-                lineHeight: 1.5,
                 textTransform: "uppercase",
               }}
             >
@@ -397,32 +402,33 @@ const PdfDocument = ({ data, template }) => {
                 style={{
                   flexDirection: "row",
                   alignItems: "center",
-                  fontSize: 12,
-                  color: "#000",
-                  textDecoration: "none",
-                  lineHeight: 1.3,
+
                   marginRight: 4,
                 }}
                 key="mobile"
               >
                 <Image
                   style={{
-                    width: 16,
-                    height: 16,
+                    width: 14,
+                    height: 14,
                     marginRight: 5,
                   }}
                   src={MobileIcon}
                 />
-                <Text>{mobile}</Text>
+                <Text
+                  style={{
+                    fontSize: 12,
+                    color: "#000",
+                    textDecoration: "none",
+                  }}
+                >
+                  {mobile}
+                </Text>
               </View>
               <View
                 style={{
                   flexDirection: "row",
                   alignItems: "center",
-                  fontSize: 12,
-                  color: "#000",
-                  textDecoration: "none",
-                  lineHeight: 1.3,
                   marginRight: 4,
                 }}
                 key="email"
@@ -435,7 +441,15 @@ const PdfDocument = ({ data, template }) => {
                   }}
                   src={EmailIcon}
                 />
-                <Text>{email}</Text>
+                <Text
+                  style={{
+                    fontSize: 12,
+                    color: "#000",
+                    textDecoration: "none",
+                  }}
+                >
+                  {email}
+                </Text>
               </View>
             </View>
             <View style={{ marginBottom: 5 }}></View>
@@ -443,46 +457,55 @@ const PdfDocument = ({ data, template }) => {
               style={{
                 flexDirection: "row",
                 alignItems: "center",
-                fontSize: 12,
-                color: "#000",
                 textDecoration: "none",
-                lineHeight: 1.3,
                 marginRight: 4,
               }}
               src={links[0].link}
             >
               <Image
                 style={{
-                  width: 16,
-                  height: 16,
+                  width: 14,
+                  height: 14,
                   marginRight: 5,
                 }}
                 src={links[0].icon}
               />
-              <Text>{links[0].link}</Text>
+              <Text
+                style={{
+                  fontSize: 12,
+                  color: "#000",
+                  textDecoration: "none",
+                }}
+              >
+                {links[0].link}
+              </Text>
             </Link>
             <View style={{ marginBottom: 5 }}></View>
             <View
               style={{
                 flexDirection: "row",
                 alignItems: "center",
-                fontSize: 12,
-                color: "#000",
-                textDecoration: "none",
-                lineHeight: 1.3,
                 marginRight: 4,
               }}
               key="address"
             >
               <Image
                 style={{
-                  width: 16,
-                  height: 16,
+                  width: 14,
+                  height: 14,
                   marginRight: 5,
                 }}
                 src={LocationIcon}
               />
-              <Text>{address}</Text>
+              <Text
+                style={{
+                  fontSize: 12,
+                  color: "#000",
+                  textDecoration: "none",
+                }}
+              >
+                {address}
+              </Text>
             </View>
           </View>
           <View
@@ -554,7 +577,7 @@ const PdfDocument = ({ data, template }) => {
         style={{
           paddingTop: 30,
           paddingBottom: 30,
-          paddingHorizontal: 20,
+          paddingHorizontal: 30,
         }}
       >
         {template === "single-column" ? (
