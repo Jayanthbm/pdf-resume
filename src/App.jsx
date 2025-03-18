@@ -1,13 +1,15 @@
 import { PDFViewer } from "@react-pdf/renderer";
 import { useEffect, useState } from "react";
-import './App.css';
+import "./App.css";
 import PdfDocument from "./PdfDocument";
 function App() {
   const [template, setTemplate] = useState("single-column");
   const [url, setUrl] = useState("");
   const [resumeData, setResumeData] = useState(null);
+  const [pastedJson, setPastedJson] = useState("");
   const [loading, setLoading] = useState(false);
   const [errorMesssage, setErrorMessage] = useState(null);
+  const [activeTab, setActiveTab] = useState("text");
 
   const SAMPLE_JSON = {
     name: "John Doe",
@@ -92,7 +94,13 @@ function App() {
   useEffect(() => {
     const storedResumeData = localStorage.getItem("resumeData");
     if (storedResumeData) {
-      setResumeData(JSON.parse(storedResumeData));
+      let parsed = JSON.parse(storedResumeData);
+      if (validateJson(parsed)) {
+        setResumeData(parsed);
+      } else {
+        localStorage.removeItem("resumeData");
+        clearData();
+      }
     }
   }, []);
   const loadResumeData = async () => {
@@ -102,9 +110,14 @@ function App() {
       setResumeData(null);
       const response = await fetch(url);
       const data = await response.json();
-      setResumeData(data);
-      localStorage.setItem("resumeData", JSON.stringify(data));
-      setLoading(false);
+      if (validateJson(data)) {
+        setResumeData(data);
+        localStorage.setItem("resumeData", JSON.stringify(data));
+        setLoading(false);
+      } else {
+        setErrorMessage("Invalid JSON format");
+      }
+      return true;
     } catch (error) {
       setErrorMessage(error.message);
       console.error("Error fetching data:", error);
@@ -112,13 +125,61 @@ function App() {
     }
   };
 
+  const loadPastedJson = () => {
+    try {
+      setErrorMessage(null);
+      const parsedData = JSON.parse(pastedJson);
+      if (validateJson(parsedData)) {
+        setResumeData(parsedData);
+        localStorage.setItem("resumeData", JSON.stringify(parsedData));
+        setActiveTab("json");
+      } else {
+        setPastedJson("");
+        setActiveTab("json");
+        setErrorMessage("Invalid JSON format");
+      }
+    } catch (error) {
+      setErrorMessage("Invalid JSON format");
+    }
+  };
+
   const clearData = () => {
     setResumeData(null);
     setUrl("");
+    setPastedJson("");
     setTemplate("single-column");
     setErrorMessage(null);
     setLoading(false);
-  }
+  };
+
+  const validateJson = (json) => {
+    try {
+      setErrorMessage(null);
+      if (json.name === undefined) {
+        setErrorMessage("Keys missing in JSON,name is missing");
+        return false;
+      } else if (json.role === undefined) {
+        setErrorMessage("Keys missing in JSON,role is missing");
+        return false;
+      } else if (json.contactDetails === undefined) {
+        setErrorMessage("Keys missing in JSON,contactDetails is missing");
+        return false;
+      } else if (json.skills === undefined) {
+        setErrorMessage("Keys missing in JSON,skills is missing");
+        return false;
+      } else if (json.work?.length === 0) {
+        setErrorMessage("Keys missing in JSON,work is missing");
+        return false;
+      } else if (json.education?.length === 0) {
+        setErrorMessage("Keys missing in JSON,education is missing");
+        return false;
+      }
+      return true;
+    } catch (error) {
+      console.log("error", error);
+      return false;
+    }
+  };
 
   const loadSampleJson = () => {
     setResumeData(SAMPLE_JSON);
@@ -126,7 +187,7 @@ function App() {
     setTemplate("single-column");
     setErrorMessage(null);
     setLoading(false);
-  }
+  };
 
   const downloadSampleJson = () => {
     const blob = new Blob([JSON.stringify(SAMPLE_JSON, null, 2)], {
@@ -140,25 +201,59 @@ function App() {
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
-  }
+  };
   return (
     <>
       <div className="fixed-top">
         <div className="heading">PDF Resume</div>
-        <div className="input-container">
-          <input
-            type="text"
-            value={url}
-            placeholder="Enter URL for Resume data"
-            onChange={(e) => setUrl(e.target.value)}
-          />
-          <button onClick={loadResumeData} className="load-btn">
-            Load
+        <div className="tab-container">
+          <button
+            onClick={() => setActiveTab("url")}
+            className={`tab-btn ${activeTab === "url" ? "active" : ""}`}
+          >
+            URL
           </button>
-          <button onClick={clearData} className="danger-btn">
-            Clear
+          <button
+            onClick={() => setActiveTab("text")}
+            className={`tab-btn ${activeTab === "text" ? "active" : ""}`}
+          >
+            Text
           </button>
         </div>
+        {activeTab === "url" && (
+          <div className="input-container">
+            <input
+              type="text"
+              value={url}
+              placeholder="Enter URL for Resume data"
+              onChange={(e) => setUrl(e.target.value)}
+            />
+            <button onClick={loadResumeData} className="load-btn">
+              Load
+            </button>
+            <button onClick={clearData} className="danger-btn">
+              Clear
+            </button>
+          </div>
+        )}
+
+        {activeTab === "text" && (
+          <div className="input-container">
+            <textarea
+              rows="6"
+              placeholder="Paste JSON data here..."
+              value={pastedJson}
+              onChange={(e) => setPastedJson(e.target.value)}
+              className="json-textarea"
+            />
+            <button onClick={loadPastedJson} className="load-btn">
+              Load JSON
+            </button>
+            <button onClick={clearData} className="danger-btn">
+              Clear
+            </button>
+          </div>
+        )}
         <div className="input-container">
           <button onClick={loadSampleJson} className="load-btn">
             Load Sample
@@ -167,41 +262,27 @@ function App() {
             Download Sample JSON
           </button>
         </div>
+
         {loading && <div>Loading...</div>}
-        {errorMesssage && <div className="error">{errorMesssage}</div>}
-        {resumeData && (
-          <div className="select-container">
-            <select
-              onChange={(e) => setTemplate(e.target.value)}
-              className="my-select"
-              value={template}
-            >
-              <option
-                value="single-column"
-                selected={template === "single-column"}
+        {errorMesssage ? (
+          <div className="error">{errorMesssage}</div>
+        ) : (
+          <>
+            {resumeData && (
+              <PDFViewer
+                style={{
+                  width: "90%",
+                  height: "90vh",
+                  marginLeft: 30,
+                  marginRight: 30,
+                }}
               >
-                Single Column
-              </option>
-              <option value="two-column" selected={template === "two-column"}>
-                Two Column
-              </option>
-            </select>
-          </div>
+                <PdfDocument data={resumeData} template={template} />
+              </PDFViewer>
+            )}
+          </>
         )}
       </div>
-      {resumeData && (
-        <PDFViewer
-          style={{
-            width: "90%",
-            height: "90vh",
-            marginLeft: 30,
-            marginRight: 30,
-          }}
-        >
-         <PdfDocument data={resumeData} template={template} />
-        </PDFViewer>
-      )}
-
     </>
   );
 }

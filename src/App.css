@@ -59,3 +59,63 @@ input{
   text-align: center;
 
 }
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top:10px;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 6px;
+  margin: 0 10px;
+}
+
+.tab-btn:hover {
+  background-color: #ddd;
+}
+
+.tab-btn.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.error {
+  color: #d32f2f;
+  /* Red color for errors */
+  background-color: #fdecea;
+  /* Light red background */
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 10px;
+  border: 1px solid #f44336;
+  /* Red border */
+  text-align: center;
+
+  /* Center horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Optional: Center within the parent container */
+  width: fit-content;
+  margin: 10px auto;
+}
+
+.error::before {
+  content: "⚠️ ";
+  /* Warning icon */
+  font-size: 16px;
+  margin-right: 5px;
+}
