@@ -12,7 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-pdf/renderer": "^4.3.1",
+    "@react-pdf/renderer": "^4.3.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-pdf": "^10.2.0"
