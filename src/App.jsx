@@ -3,12 +3,11 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import PdfDocument from "./PdfDocument";
 function App() {
-  const [template, setTemplate] = useState("single-column");
   const [url, setUrl] = useState("");
   const [resumeData, setResumeData] = useState(null);
   const [pastedJson, setPastedJson] = useState("");
   const [loading, setLoading] = useState(false);
-  const [errorMesssage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
   const [activeTab, setActiveTab] = useState("text");
 
   const SAMPLE_JSON = {
@@ -147,7 +146,6 @@ function App() {
     setResumeData(null);
     setUrl("");
     setPastedJson("");
-    setTemplate("single-column");
     setErrorMessage(null);
     setLoading(false);
   };
@@ -167,10 +165,13 @@ function App() {
       } else if (json.skills === undefined) {
         setErrorMessage("Keys missing in JSON,skills is missing");
         return false;
-      } else if (json.work?.length === 0) {
+      } else if (!Array.isArray(json.work) || json.work.length === 0) {
         setErrorMessage("Keys missing in JSON,work is missing");
         return false;
-      } else if (json.education?.length === 0) {
+      } else if (
+        !Array.isArray(json.education) ||
+        json.education.length === 0
+      ) {
         setErrorMessage("Keys missing in JSON,education is missing");
         return false;
       }
@@ -184,7 +185,6 @@ function App() {
   const loadSampleJson = () => {
     setResumeData(SAMPLE_JSON);
     setUrl("");
-    setTemplate("single-column");
     setErrorMessage(null);
     setLoading(false);
   };
@@ -264,8 +264,8 @@ function App() {
         </div>
 
         {loading && <div>Loading...</div>}
-        {errorMesssage ? (
-          <div className="error">{errorMesssage}</div>
+        {errorMessage ? (
+          <div className="error">{errorMessage}</div>
         ) : (
           <>
             {resumeData && (
@@ -277,7 +277,7 @@ function App() {
                   marginRight: 30,
                 }}
               >
-                <PdfDocument data={resumeData} template={template} />
+                <PdfDocument data={resumeData} />
               </PDFViewer>
             )}
           </>

@@ -1,0 +1,199 @@
+{
+  "name": "Jayanthbharadwaj M",
+  "role": "Full Stack Developer",
+  "description": "Developer with more than 5 years of experience in Full Stack development",
+  "contactDetails": {
+    "mobile": "8892218173",
+    "email": "jayanthbharadwajm@gmail.com",
+    "address": "Bengaluru",
+    "links": [
+      {
+        "link": "https://www.linkedin.com/in/jayanthbharadwaj-m-814a5697/",
+        "icon": "https://jayanthbm.github.io/mydata/icons/linkedin.png",
+        "title": "LinkedIn"
+      },
+      {
+        "link": "https://github.com/Jayanthbm",
+        "icon": "https://jayanthbm.github.io/mydata/icons/github.png",
+        "title": "GitHub"
+      }
+    ]
+  },
+  "skills": {
+    "Programming Languages": [
+      "JavaScript",
+      "TypeScript",
+      "SQL",
+      "PHP",
+      "HTML",
+      "CSS",
+      "Python",
+      "Go"
+    ],
+    "Frameworks": [
+      "Node.js",
+      "Express.js",
+      "NestJS",
+      "React.js",
+      "React Native",
+      "Expo",
+      "Vite"
+    ],
+    "Libraries": [
+      "jQuery",
+      "Ajax",
+      "Bootstrap",
+      "Material UI (MUI)",
+      "Ant Design"
+    ],
+    "Databases": [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "SQLite",
+      "Firebase / Firestore",
+      "Supabase"
+    ],
+    "Tools": [
+      "Swagger (OpenAPI)",
+      "Postman",
+      "Git",
+      "Jenkins",
+      "Docker",
+      "Nginx",
+      "PM2",
+      "AWS (EC2, S3, RDS, Lambda)",
+      "Azure",
+      "Heroku",
+      "Netlify",
+      "GitHub Pages",
+      "CloudWatch",
+      "Jira",
+      "Confluence"
+    ]
+  },
+  "work": [
+    {
+      "role": "Technical Lead",
+      "company": "Truminds Software Systems",
+      "duration": "11/2023 - Present",
+      "location": "Bengaluru",
+      "tasks": [
+        "Led 'Migration Service' project, creating AWS resources and facilitating account migration.",
+        "Developed backend for 'Dashboard Project' with dynamic API based on JSON.",
+        "Optimized backend performance by 25% through performance tuning.",
+        "Implemented automated testing procedures resulting in a 40% reduction in testing time.",
+        "Mentored junior developers, resulting in a 20% improvement in their coding efficiency.",
+        "Streamlined project management processes, reducing project completion time by 15%."
+      ]
+    },
+    {
+      "role": "Senior Development Engineer-2",
+      "company": "Truminds Software Systems",
+      "duration": "11/2022 - 11/2023",
+      "location": "Bengaluru",
+      "tasks": [
+        "Led frontend development for a dashboard platform, improving usability and performance.",
+        "Contributed to IAM implementation using AWS Cognito for authentication and authorization.",
+        "Implemented Multi-Factor Authentication (MFA) to enhance application security.",
+        "Optimized frontend code, reducing page load times by approximately 30%."
+      ]
+    },
+    {
+      "role": "Associate Software Engineer",
+      "company": "Brigosha Technologies",
+      "duration": "10/2021 - 11/2022",
+      "location": "Bengaluru",
+      "tasks": [
+        "Developed backend services for an EdTech platform, including user and payment workflows.",
+        "Implemented communication services using SMTP and third-party SMS APIs for notifications and alerts.",
+        "Optimized APIs and database queries to improve backend performance and reliability."
+      ]
+    },
+    {
+      "role": "Product Developer",
+      "company": "Camp Automation",
+      "duration": "10/2018 - 10/2021",
+      "location": "Bengaluru",
+      "tasks": [
+        "Developed and maintained web applications using PHP, Node.js, and React.",
+        "Built and published cross-platform mobile applications using React Native for Play Store and App Store.",
+        "Improved application performance and resolved security-related issues through code optimization and best practices."
+      ]
+    },
+    {
+      "role": "Intern",
+      "company": "Augplat Technologies",
+      "duration": "08/2018 - 10/2018",
+      "location": "Bengaluru",
+      "tasks": [
+        "Supported web application development and database-related tasks under senior engineer guidance."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Bachelor of Engineering",
+      "school": "Bangalore Institute of Technology",
+      "location": "Bengaluru",
+      "duration": "08/2015 - 06/2018",
+      "grade": "53%",
+      "major": "Information Science"
+    },
+    {
+      "title": "Diploma",
+      "school": "PES Polytechnic",
+      "location": "Bengaluru",
+      "duration": "06/2012 - 06/2015",
+      "grade": "70%",
+      "major": "Computer Science"
+    }
+  ],
+  "personalProjects": [
+    {
+      "title": "PDF Resume Generator",
+      "description": "JSON-driven resume generator with live preview and downloadable PDF support.",
+      "link": "https://github.com/Jayanthbm/pdf-resume",
+      "duration": "2025 - Present",
+      "techUsed": ["React", "Vite", "@react-pdf/renderer"],
+      "highlights": [
+        "Designed a flexible JSON schema for dynamic resume generation",
+        "Implemented live PDF preview and export"
+      ]
+    },
+    {
+      "title": "Stothram – Devotional Mobile App & PWA",
+      "description": "Offline-first devotional app available as Android app and PWA.",
+      "link": "https://play.google.com/store/apps/details?id=com.jayanth.shotram",
+      "duration": "07/2020 - Present",
+      "techUsed": ["React Native", "PWA", "JSON"],
+      "highlights": [
+        "Offline-first architecture using JSON-based content delivery",
+        "Published Android app with active users"
+      ]
+    },
+    {
+      "title": "material-loader-react-native",
+      "description": "Material Design 3 inspired animated loader for React Native and Expo.",
+      "link": "https://www.npmjs.com/package/material-loader-react-native",
+      "duration": "10/2025",
+      "techUsed": ["React Native", "Reanimated", "SVG"],
+      "highlights": [
+        "Published open-source npm package",
+        "High-performance geometric animations"
+      ]
+    },
+    {
+      "title": "JMoney – Personal Expense Tracker",
+      "description": "Personal expense tracker built with a modern full-stack setup.",
+      "link": "https://github.com/Jayanthbm",
+      "duration": "04/2025 - Present",
+      "techUsed": ["React", "Vite", "Supabase"],
+      "highlights": [
+        "Full-stack application using Supabase backend",
+        "Responsive UI for expense tracking and categorization"
+      ]
+    }
+  ]
+}
