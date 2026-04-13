@@ -24,6 +24,8 @@ const PdfDocument = ({ data }) => {
 
   const renderSingleColumn = ({
     name,
+    role,
+    description,
     contactDetails,
     skills,
     work,
@@ -42,7 +44,7 @@ const PdfDocument = ({ data }) => {
             borderBottom: 2,
             borderBottomColor: "#000",
             borderBottomStyle: "solid",
-            marginBottom: 10,
+            marginBottom: 8,
           }}
         />
       </>
@@ -54,6 +56,32 @@ const PdfDocument = ({ data }) => {
         <Text style={{ fontSize: 24, textAlign: "center", lineHeight: 1.5 }}>
           {name}
         </Text>
+        {role && (
+          <Text
+            style={{
+              fontSize: 14,
+              textAlign: "center",
+              marginBottom: 4,
+              fontWeight: 500,
+            }}
+          >
+            {role}
+          </Text>
+        )}
+        {description && (
+          <Text
+            style={{
+              fontSize: 11,
+              textAlign: "center",
+              marginTop: 5,
+              marginBottom: 8,
+              color: "#333",
+              lineHeight: 1.4,
+            }}
+          >
+            {description}
+          </Text>
+        )}
 
         <View
           style={{
@@ -127,33 +155,40 @@ const PdfDocument = ({ data }) => {
 
         {/* Skills */}
         {sectionTitle("Technical Skills")}
-        {Object.entries(skills).map(([category, skillsList], index) => (
-          <View
-            key={index}
-            style={{
-              flexDirection: "row",
-              marginBottom: 3,
-            }}
-          >
-            <Text style={{ fontSize: 13, fontWeight: 400 }}>{category}:</Text>
-            <Text style={{ fontSize: 13, paddingLeft: 8 }}>
-              {skillsList.join(", ")}
-            </Text>
-          </View>
-        ))}
+        <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
+          {Object.entries(skills).map(([category, skillsList], index) => (
+            <View
+              key={index}
+              style={{
+                width: "48%",
+                marginBottom: 6,
+                paddingRight: 6,
+              }}
+            >
+              <Text style={{ fontSize: 12, fontWeight: 600 }}>{category}</Text>
+              <Text style={{ fontSize: 11, lineHeight: 1.4 }}>
+                {skillsList.join(", ")}
+              </Text>
+            </View>
+          ))}
+        </View>
 
         {/* Work Experience */}
         {sectionTitle("Work Experience")}
         {work.map((job, index) => (
-          <View key={index} style={{ marginBottom: 10 }}>
+          <View key={index} style={{ marginBottom: 8 }}>
             <View
               style={{
                 flexDirection: "row",
                 justifyContent: "space-between",
               }}
             >
-              <Text style={{ fontSize: 13 }}>{job.company}</Text>
-              <Text style={{ fontSize: 13 }}>{job.duration}</Text>
+              <Text style={{ fontSize: 13, fontWeight: 700 }}>
+                {job.company}
+              </Text>
+              <Text style={{ fontSize: 13, fontWeight: 700 }}>
+                {job.duration}
+              </Text>
             </View>
             <View
               style={{
@@ -161,14 +196,23 @@ const PdfDocument = ({ data }) => {
                 justifyContent: "space-between",
               }}
             >
-              <Text style={{ fontSize: 12, color: "#333" }}>{job.role}</Text>
-              <Text style={{ fontSize: 12, color: "#333" }}>
+              <Text style={{ fontSize: 12, color: "#333", fontWeight: 700 }}>
+                {job.role}
+              </Text>
+              <Text style={{ fontSize: 12, color: "#333", fontWeight: 700 }}>
                 {job.location}
               </Text>
             </View>
             <View style={{ marginLeft: 10, marginTop: 4 }}>
               {job.tasks.map((task, i) => (
-                <Text key={i} style={{ fontSize: 12, marginBottom: 3 }}>
+                <Text
+                  key={i}
+                  style={{
+                    fontSize: 12,
+                    marginBottom: 3,
+                    lineHeight: 1.4,
+                  }}
+                >
                   • {task}
                 </Text>
               ))}
@@ -181,8 +225,8 @@ const PdfDocument = ({ data }) => {
           <>
             {sectionTitle("Personal Projects")}
             {personalProjects.map((project, index) => (
-              <View key={index} style={{ marginBottom: 10 }}>
-                <Text style={{ fontSize: 13, fontWeight: 500 }}>
+              <View key={index} style={{ marginBottom: 8 }}>
+                <Text style={{ fontSize: 13, fontWeight: 800 }}>
                   {project.title}
                 </Text>
 
@@ -220,7 +264,7 @@ const PdfDocument = ({ data }) => {
         {/* Education */}
         {sectionTitle("Education")}
         {education.map((edu, index) => (
-          <View key={index} style={{ marginBottom: 10 }}>
+          <View key={index} style={{ marginBottom: 8 }}>
             <View
               style={{
                 flexDirection: "row",
@@ -262,6 +306,8 @@ const PdfDocument = ({ data }) => {
       >
         {renderSingleColumn({
           name,
+          role,
+          description,
           contactDetails,
           skills,
           work,

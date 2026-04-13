@@ -1,7 +1,7 @@
 {
   "name": "Jayanthbharadwaj M",
-  "role": "Full Stack Developer",
-  "description": "Developer with more than 5 years of experience in Full Stack development",
+  "role": "Technical Lead | Full Stack Developer",
+  "description": "Technical Lead with 7+ years of experience building scalable backend systems, microservices, and multi-tenant platforms using Node.js and cloud technologies.",
   "contactDetails": {
     "mobile": "8892218173",
     "email": "jayanthbharadwajm@gmail.com",
@@ -24,54 +24,41 @@
       "JavaScript",
       "TypeScript",
       "SQL",
-      "PHP",
-      "HTML",
-      "CSS",
       "Python",
-      "Go"
+      "Go",
+      "PHP"
     ],
     "Frameworks": [
       "Node.js",
       "Express.js",
       "NestJS",
       "React.js",
-      "React Native",
-      "Expo",
-      "Vite"
+      "React Native"
     ],
-    "Libraries": [
-      "jQuery",
-      "Ajax",
-      "Bootstrap",
-      "Material UI (MUI)",
-      "Ant Design"
+    "Architecture": [
+      "REST APIs",
+      "Microservices",
+      "Distributed Systems",
+      "Event-Driven Architecture",
+      "Multi-Tenant Architecture"
     ],
-    "Databases": [
-      "MySQL",
+    "Databases & Caching": [
       "PostgreSQL",
+      "MySQL",
       "MongoDB",
       "Redis",
       "SQLite",
-      "Firebase / Firestore",
+      "Firebase",
       "Supabase"
     ],
-    "Tools": [
-      "Swagger (OpenAPI)",
-      "Postman",
-      "Git",
-      "Jenkins",
-      "Docker",
-      "Nginx",
-      "PM2",
+    "Cloud & DevOps": [
       "AWS (EC2, S3, RDS, Lambda)",
       "Azure",
-      "Heroku",
-      "Netlify",
-      "GitHub Pages",
-      "CloudWatch",
-      "Jira",
-      "Confluence"
-    ]
+      "Docker",
+      "Nginx",
+      "PM2"
+    ],
+    "Tools": ["Git", "Postman", "Swagger (OpenAPI)", "Jira", "Confluence"]
   },
   "work": [
     {
@@ -80,12 +67,12 @@
       "duration": "11/2023 - Present",
       "location": "Bengaluru",
       "tasks": [
-        "Led 'Migration Service' project, creating AWS resources and facilitating account migration.",
-        "Developed backend for 'Dashboard Project' with dynamic API based on JSON.",
-        "Optimized backend performance by 25% through performance tuning.",
-        "Implemented automated testing procedures resulting in a 40% reduction in testing time.",
-        "Mentored junior developers, resulting in a 20% improvement in their coding efficiency.",
-        "Streamlined project management processes, reducing project completion time by 15%."
+        "Architected multi-tenant microservices platforms with automated tenant provisioning (DB, schema, domain).",
+        "Built scalable backend systems using Node.js, PostgreSQL, Redis, and Kafka for real-time processing.",
+        "Developed REST APIs and event-driven systems for device management and data ingestion.",
+        "Led migration of legacy systems to microservices using JSON-driven APIs.",
+        "Implemented authentication using AWS Cognito and Azure AD with MFA and passkeys.",
+        "Optimized performance using Redis caching and database query tuning."
       ]
     },
     {
@@ -94,10 +81,10 @@
       "duration": "11/2022 - 11/2023",
       "location": "Bengaluru",
       "tasks": [
-        "Led frontend development for a dashboard platform, improving usability and performance.",
-        "Contributed to IAM implementation using AWS Cognito for authentication and authorization.",
-        "Implemented Multi-Factor Authentication (MFA) to enhance application security.",
-        "Optimized frontend code, reducing page load times by approximately 30%."
+        "Led frontend development for real-time dashboard using React.js and WebSockets.",
+        "Built REST APIs and JSON-driven UI components for scalable dashboards.",
+        "Implemented authentication using AWS Cognito with multi-tenant support.",
+        "Developed migration service for AWS resource provisioning and data transfer."
       ]
     },
     {
@@ -106,9 +93,9 @@
       "duration": "10/2021 - 11/2022",
       "location": "Bengaluru",
       "tasks": [
-        "Developed backend services for an EdTech platform, including user and payment workflows.",
-        "Implemented communication services using SMTP and third-party SMS APIs for notifications and alerts.",
-        "Optimized APIs and database queries to improve backend performance and reliability."
+        "Developed backend REST APIs for EdTech platform (user and payment workflows).",
+        "Built notification services using SMTP and SMS APIs.",
+        "Optimized API performance and database queries."
       ]
     },
     {
@@ -117,9 +104,9 @@
       "duration": "10/2018 - 10/2021",
       "location": "Bengaluru",
       "tasks": [
-        "Developed and maintained web applications using PHP, Node.js, and React.",
-        "Built and published cross-platform mobile applications using React Native for Play Store and App Store.",
-        "Improved application performance and resolved security-related issues through code optimization and best practices."
+        "Developed web applications using PHP, Node.js, and React.",
+        "Built and published React Native apps on Play Store and App Store.",
+        "Improved performance and resolved security issues."
       ]
     },
     {
@@ -153,47 +140,41 @@
   "personalProjects": [
     {
       "title": "PDF Resume Generator",
-      "description": "JSON-driven resume generator with live preview and downloadable PDF support.",
+      "description": "JSON-based resume generator with live preview and PDF export.",
+      "highlights": [
+        "Designed dynamic JSON schema",
+        "Implemented PDF preview and download"
+      ],
       "link": "https://github.com/Jayanthbm/pdf-resume",
       "duration": "2025 - Present",
-      "techUsed": ["React", "Vite", "@react-pdf/renderer"],
-      "highlights": [
-        "Designed a flexible JSON schema for dynamic resume generation",
-        "Implemented live PDF preview and export"
-      ]
+      "techUsed": ["React", "Vite", "@react-pdf/renderer"]
     },
     {
       "title": "Stothram – Devotional Mobile App & PWA",
-      "description": "Offline-first devotional app available as Android app and PWA.",
+      "description": "Offline-first devotional app (Android + PWA).",
+      "highlights": [
+        "JSON-based offline architecture",
+        "Published Android app"
+      ],
       "link": "https://play.google.com/store/apps/details?id=com.jayanth.shotram",
       "duration": "07/2020 - Present",
-      "techUsed": ["React Native", "PWA", "JSON"],
-      "highlights": [
-        "Offline-first architecture using JSON-based content delivery",
-        "Published Android app with active users"
-      ]
+      "techUsed": ["React Native", "PWA", "JSON"]
     },
     {
       "title": "material-loader-react-native",
-      "description": "Material Design 3 inspired animated loader for React Native and Expo.",
+      "description": "Animated loader for React Native (Material Design 3).",
+      "highlights": ["Published npm package", "High-performance animations"],
       "link": "https://www.npmjs.com/package/material-loader-react-native",
       "duration": "10/2025",
-      "techUsed": ["React Native", "Reanimated", "SVG"],
-      "highlights": [
-        "Published open-source npm package",
-        "High-performance geometric animations"
-      ]
+      "techUsed": ["React Native", "Reanimated", "SVG"]
     },
     {
       "title": "JMoney – Personal Expense Tracker",
-      "description": "Personal expense tracker built with a modern full-stack setup.",
+      "description": "Personal expense tracker using React and Supabase.",
+      "highlights": ["Full-stack app with Supabase", "Responsive UI"],
       "link": "https://github.com/Jayanthbm",
       "duration": "04/2025 - Present",
-      "techUsed": ["React", "Vite", "Supabase"],
-      "highlights": [
-        "Full-stack application using Supabase backend",
-        "Responsive UI for expense tracking and categorization"
-      ]
+      "techUsed": ["React", "Vite", "Supabase"]
     }
   ]
 }
