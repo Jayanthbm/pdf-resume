@@ -1,0 +1,180 @@
+{
+  "name": "Jayanthbharadwaj M",
+  "role": "Technical Lead | Full Stack Developer",
+  "description": "Technical Lead with 7+ years of experience building scalable backend systems, microservices, and multi-tenant platforms using Node.js and cloud technologies.",
+  "contactDetails": {
+    "mobile": "8892218173",
+    "email": "jayanthbharadwajm@gmail.com",
+    "address": "Bengaluru",
+    "links": [
+      {
+        "link": "https://www.linkedin.com/in/jayanthbharadwaj-m-814a5697/",
+        "icon": "https://jayanthbm.github.io/mydata/icons/linkedin.png",
+        "title": "LinkedIn"
+      },
+      {
+        "link": "https://github.com/Jayanthbm",
+        "icon": "https://jayanthbm.github.io/mydata/icons/github.png",
+        "title": "GitHub"
+      }
+    ]
+  },
+  "skills": {
+    "Programming Languages": [
+      "JavaScript",
+      "TypeScript",
+      "SQL",
+      "Python",
+      "Go",
+      "PHP"
+    ],
+    "Frameworks": [
+      "Node.js",
+      "Express.js",
+      "NestJS",
+      "React.js",
+      "React Native"
+    ],
+    "Architecture": [
+      "REST APIs",
+      "Microservices",
+      "Distributed Systems",
+      "Event-Driven Architecture",
+      "Multi-Tenant Architecture"
+    ],
+    "Databases & Caching": [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "SQLite",
+      "Firebase",
+      "Supabase"
+    ],
+    "Cloud & DevOps": [
+      "AWS (EC2, S3, RDS, Lambda)",
+      "Azure",
+      "Docker",
+      "Nginx",
+      "PM2"
+    ],
+    "Tools": ["Git", "Postman", "Swagger (OpenAPI)", "Jira", "Confluence"]
+  },
+  "work": [
+    {
+      "role": "Technical Lead",
+      "company": "Truminds Software Systems",
+      "duration": "11/2023 - Present",
+      "location": "Bengaluru",
+      "tasks": [
+        "Architected multi-tenant microservices platforms with automated tenant provisioning (DB, schema, domain).",
+        "Built scalable backend systems using Node.js, PostgreSQL, Redis, and Kafka for real-time processing.",
+        "Developed REST APIs and event-driven systems for device management and data ingestion.",
+        "Led migration of legacy systems to microservices using JSON-driven APIs.",
+        "Implemented authentication using AWS Cognito and Azure AD with MFA and passkeys.",
+        "Optimized performance using Redis caching and database query tuning."
+      ]
+    },
+    {
+      "role": "Senior Development Engineer-2",
+      "company": "Truminds Software Systems",
+      "duration": "11/2022 - 11/2023",
+      "location": "Bengaluru",
+      "tasks": [
+        "Led frontend development for real-time dashboard using React.js and WebSockets.",
+        "Built REST APIs and JSON-driven UI components for scalable dashboards.",
+        "Implemented authentication using AWS Cognito with multi-tenant support.",
+        "Developed migration service for AWS resource provisioning and data transfer."
+      ]
+    },
+    {
+      "role": "Associate Software Engineer",
+      "company": "Brigosha Technologies",
+      "duration": "10/2021 - 11/2022",
+      "location": "Bengaluru",
+      "tasks": [
+        "Developed backend REST APIs for EdTech platform (user and payment workflows).",
+        "Built notification services using SMTP and SMS APIs.",
+        "Optimized API performance and database queries."
+      ]
+    },
+    {
+      "role": "Product Developer",
+      "company": "Camp Automation",
+      "duration": "10/2018 - 10/2021",
+      "location": "Bengaluru",
+      "tasks": [
+        "Developed web applications using PHP, Node.js, and React.",
+        "Built and published React Native apps on Play Store and App Store.",
+        "Improved performance and resolved security issues."
+      ]
+    },
+    {
+      "role": "Intern",
+      "company": "Augplat Technologies",
+      "duration": "08/2018 - 10/2018",
+      "location": "Bengaluru",
+      "tasks": [
+        "Supported web application development and database-related tasks under senior engineer guidance."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Bachelor of Engineering",
+      "school": "Bangalore Institute of Technology",
+      "location": "Bengaluru",
+      "duration": "08/2015 - 06/2018",
+      "grade": "53%",
+      "major": "Information Science"
+    },
+    {
+      "title": "Diploma",
+      "school": "PES Polytechnic",
+      "location": "Bengaluru",
+      "duration": "06/2012 - 06/2015",
+      "grade": "70%",
+      "major": "Computer Science"
+    }
+  ],
+  "personalProjects": [
+    {
+      "title": "PDF Resume Generator",
+      "description": "JSON-based resume generator with live preview and PDF export.",
+      "highlights": [
+        "Designed dynamic JSON schema",
+        "Implemented PDF preview and download"
+      ],
+      "link": "https://github.com/Jayanthbm/pdf-resume",
+      "duration": "2025 - Present",
+      "techUsed": ["React", "Vite", "@react-pdf/renderer"]
+    },
+    {
+      "title": "Stothram – Devotional Mobile App & PWA",
+      "description": "Offline-first devotional app (Android + PWA).",
+      "highlights": [
+        "JSON-based offline architecture",
+        "Published Android app"
+      ],
+      "link": "https://play.google.com/store/apps/details?id=com.jayanth.shotram",
+      "duration": "07/2020 - Present",
+      "techUsed": ["React Native", "PWA", "JSON"]
+    },
+    {
+      "title": "material-loader-react-native",
+      "description": "Animated loader for React Native (Material Design 3).",
+      "highlights": ["Published npm package", "High-performance animations"],
+      "link": "https://www.npmjs.com/package/material-loader-react-native",
+      "duration": "10/2025",
+      "techUsed": ["React Native", "Reanimated", "SVG"]
+    },
+    {
+      "title": "JMoney – Personal Expense Tracker",
+      "description": "Personal expense tracker using React and Supabase.",
+      "highlights": ["Full-stack app with Supabase", "Responsive UI"],
+      "link": "https://github.com/Jayanthbm",
+      "duration": "04/2025 - Present",
+      "techUsed": ["React", "Vite", "Supabase"]
+    }
+  ]
+}
