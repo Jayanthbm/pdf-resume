@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.5.1",
-    "react": "^19.2.7",
+    "react": "^19.2.8",
     "react-dom": "^19.2.7",
     "react-pdf": "^10.4.1"
   },
