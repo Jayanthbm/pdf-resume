@@ -2827,10 +2827,10 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-pdf@^10.4.1:
-  version "10.4.1"
-  resolved "https://registry.yarnpkg.com/react-pdf/-/react-pdf-10.4.1.tgz#7419d45a96ffbce09e2d9919ee330a0d5147d2ed"
-  integrity sha512-kS/35staVCBqS29verTQJQZXw7RfsRCPO3fdJoW1KXylcv7A9dw6DZ3vJXC2w+bIBgLw5FN4pOFvKSQtkQhPfA==
+react-pdf@^10.5.0:
+  version "10.5.0"
+  resolved "https://registry.yarnpkg.com/react-pdf/-/react-pdf-10.5.0.tgz#5a28182cc0f275e055edfb1d067c8714e0ad1a65"
+  integrity sha512-zGKb6Ph5AYn2OfO4TS8Gg0Go3eW5K/TKy0+0FTm8EwFNbpgbuaWBZoJdYkJt+cRBCkizE9dYvqtMtHRj522Q4w==
   dependencies:
     clsx "^2.0.0"
     dequal "^2.0.3"
