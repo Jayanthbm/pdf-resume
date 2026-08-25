@@ -202,6 +202,37 @@ function App() {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
   };
+  const DEFAULT_TYPOGRAPHY = {
+    nameSize: 20,
+    roleSize: 12,
+    sectionHeadingSize: 13,
+    subHeadingSize: 11,
+    bodyTextSize: 10,
+    metaTextSize: 9.5,
+    lineHeight: 1.3,
+    pagePadding: 24,
+  };
+
+  const [typography, setTypography] = useState(() => {
+    const saved = localStorage.getItem("resumeTypography");
+    return saved ? JSON.parse(saved) : DEFAULT_TYPOGRAPHY;
+  });
+
+  const [showConfig, setShowConfig] = useState(false);
+
+  const handleTypographyChange = (key, value) => {
+    setTypography((prev) => {
+      const updated = { ...prev, [key]: parseFloat(value) };
+      localStorage.setItem("resumeTypography", JSON.stringify(updated));
+      return updated;
+    });
+  };
+
+  const resetTypography = () => {
+    setTypography(DEFAULT_TYPOGRAPHY);
+    localStorage.setItem("resumeTypography", JSON.stringify(DEFAULT_TYPOGRAPHY));
+  };
+
   return (
     <>
       <div className="fixed-top">
@@ -261,7 +292,129 @@ function App() {
           <button onClick={downloadSampleJson} className="danger-btn">
             Download Sample JSON
           </button>
+          <button
+            onClick={() => setShowConfig((prev) => !prev)}
+            className="config-btn"
+          >
+            {showConfig ? "Hide Font Settings ✕" : "Configure Fonts & Spacing ⚙️"}
+          </button>
         </div>
+
+        {showConfig && (
+          <div className="typography-panel">
+            <div className="typography-grid">
+              <div className="typography-item">
+                <label>
+                  Name Size: <strong>{typography.nameSize}pt</strong>
+                </label>
+                <input
+                  type="range"
+                  min="16"
+                  max="28"
+                  step="1"
+                  value={typography.nameSize}
+                  onChange={(e) => handleTypographyChange("nameSize", e.target.value)}
+                />
+              </div>
+              <div className="typography-item">
+                <label>
+                  Role Size: <strong>{typography.roleSize}pt</strong>
+                </label>
+                <input
+                  type="range"
+                  min="10"
+                  max="16"
+                  step="0.5"
+                  value={typography.roleSize}
+                  onChange={(e) => handleTypographyChange("roleSize", e.target.value)}
+                />
+              </div>
+              <div className="typography-item">
+                <label>
+                  Section Heading: <strong>{typography.sectionHeadingSize}pt</strong>
+                </label>
+                <input
+                  type="range"
+                  min="10"
+                  max="18"
+                  step="0.5"
+                  value={typography.sectionHeadingSize}
+                  onChange={(e) => handleTypographyChange("sectionHeadingSize", e.target.value)}
+                />
+              </div>
+              <div className="typography-item">
+                <label>
+                  Subheading (Jobs/Projects): <strong>{typography.subHeadingSize}pt</strong>
+                </label>
+                <input
+                  type="range"
+                  min="9"
+                  max="14"
+                  step="0.5"
+                  value={typography.subHeadingSize}
+                  onChange={(e) => handleTypographyChange("subHeadingSize", e.target.value)}
+                />
+              </div>
+              <div className="typography-item">
+                <label>
+                  Body & Task Size: <strong>{typography.bodyTextSize}pt</strong>
+                </label>
+                <input
+                  type="range"
+                  min="8"
+                  max="12"
+                  step="0.5"
+                  value={typography.bodyTextSize}
+                  onChange={(e) => handleTypographyChange("bodyTextSize", e.target.value)}
+                />
+              </div>
+              <div className="typography-item">
+                <label>
+                  Dates / Locations / Links: <strong>{typography.metaTextSize ?? 9.5}pt</strong>
+                </label>
+                <input
+                  type="range"
+                  min="8"
+                  max="11"
+                  step="0.5"
+                  value={typography.metaTextSize ?? 9.5}
+                  onChange={(e) => handleTypographyChange("metaTextSize", e.target.value)}
+                />
+              </div>
+              <div className="typography-item">
+                <label>
+                  Line Height: <strong>{typography.lineHeight}</strong>
+                </label>
+                <input
+                  type="range"
+                  min="1.1"
+                  max="1.6"
+                  step="0.05"
+                  value={typography.lineHeight}
+                  onChange={(e) => handleTypographyChange("lineHeight", e.target.value)}
+                />
+              </div>
+              <div className="typography-item">
+                <label>
+                  Page Padding: <strong>{typography.pagePadding}pt</strong>
+                </label>
+                <input
+                  type="range"
+                  min="15"
+                  max="35"
+                  step="1"
+                  value={typography.pagePadding}
+                  onChange={(e) => handleTypographyChange("pagePadding", e.target.value)}
+                />
+              </div>
+            </div>
+            <div style={{ textAlign: "center", marginTop: 10 }}>
+              <button onClick={resetTypography} className="reset-btn">
+                Reset to Defaults
+              </button>
+            </div>
+          </div>
+        )}
 
         {loading && <div>Loading...</div>}
         {errorMessage ? (
@@ -277,7 +430,7 @@ function App() {
                   marginRight: 30,
                 }}
               >
-                <PdfDocument data={resumeData} />
+                <PdfDocument data={resumeData} customStyles={typography} />
               </PDFViewer>
             )}
           </>

@@ -10,7 +10,19 @@ import React from "react";
 import EmailIcon from "./icons/email.png";
 import MobileIcon from "./icons/mobile.png";
 
-const PdfDocument = ({ data }) => {
+const DEFAULT_STYLES = {
+  nameSize: 20,
+  roleSize: 12,
+  sectionHeadingSize: 13,
+  subHeadingSize: 11,
+  bodyTextSize: 10,
+  metaTextSize: 9.5,
+  lineHeight: 1.3,
+  pagePadding: 24,
+};
+
+const PdfDocument = ({ data, customStyles = {} }) => {
+  const cfg = { ...DEFAULT_STYLES, ...customStyles };
   const {
     name,
     role,
@@ -35,34 +47,44 @@ const PdfDocument = ({ data }) => {
     const { mobile, email, links } = contactDetails;
 
     const sectionTitle = (title) => (
-      <>
-        <Text style={{ fontSize: 15, padding: 5, fontWeight: "600" }}>
+      <View style={{ marginTop: 6, marginBottom: 4 }}>
+        <Text
+          style={{
+            fontSize: cfg.sectionHeadingSize,
+            fontWeight: "700",
+            textTransform: "uppercase",
+            letterSpacing: 0.5,
+          }}
+        >
           {title}
         </Text>
         <View
           style={{
-            borderBottom: 2,
-            borderBottomColor: "#000",
+            borderBottom: 1.5,
+            borderBottomColor: "#111",
             borderBottomStyle: "solid",
-            marginBottom: 8,
+            marginTop: 2,
+            marginBottom: 4,
           }}
         />
-      </>
+      </View>
     );
 
     return (
       <>
         {/* Header */}
-        <Text style={{ fontSize: 24, textAlign: "center", lineHeight: 1.5 }}>
+        <Text style={{ fontSize: cfg.nameSize, textAlign: "center", fontWeight: "700", letterSpacing: 0.5 }}>
           {name}
         </Text>
         {role && (
           <Text
             style={{
-              fontSize: 14,
+              fontSize: cfg.roleSize,
               textAlign: "center",
-              marginBottom: 4,
-              fontWeight: 500,
+              marginTop: 2,
+              marginBottom: 3,
+              fontWeight: "600",
+              color: "#222",
             }}
           >
             {role}
@@ -71,12 +93,11 @@ const PdfDocument = ({ data }) => {
         {description && (
           <Text
             style={{
-              fontSize: 11,
+              fontSize: cfg.bodyTextSize,
               textAlign: "center",
-              marginTop: 5,
-              marginBottom: 8,
+              marginBottom: 5,
               color: "#333",
-              lineHeight: 1.4,
+              lineHeight: cfg.lineHeight,
             }}
           >
             {description}
@@ -89,6 +110,8 @@ const PdfDocument = ({ data }) => {
             justifyContent: "center",
             alignItems: "center",
             flexWrap: "wrap",
+            gap: 10,
+            marginBottom: 2,
           }}
         >
           {mobile && (
@@ -96,14 +119,14 @@ const PdfDocument = ({ data }) => {
               style={{
                 flexDirection: "row",
                 alignItems: "center",
-                marginRight: 6,
+                marginRight: 8,
               }}
             >
               <Image
-                style={{ width: 14, height: 14, marginRight: 5 }}
+                style={{ width: 10, height: 10, marginRight: 4 }}
                 src={MobileIcon}
               />
-              <Text style={{ fontSize: 12 }}>{mobile}</Text>
+              <Text style={{ fontSize: cfg.metaTextSize, color: "#222" }}>{mobile}</Text>
             </View>
           )}
           {email && (
@@ -111,26 +134,16 @@ const PdfDocument = ({ data }) => {
               style={{
                 flexDirection: "row",
                 alignItems: "center",
-                marginRight: 6,
+                marginRight: 8,
               }}
             >
               <Image
-                style={{ width: 14, height: 14, marginRight: 5 }}
+                style={{ width: 10, height: 10, marginRight: 4 }}
                 src={EmailIcon}
               />
-              <Text style={{ fontSize: 12 }}>{email}</Text>
+              <Text style={{ fontSize: cfg.metaTextSize, color: "#222" }}>{email}</Text>
             </View>
           )}
-        </View>
-
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            marginBottom: 8,
-          }}
-        >
           {links?.map((link, index) => (
             <Link
               key={index}
@@ -138,14 +151,14 @@ const PdfDocument = ({ data }) => {
               style={{
                 flexDirection: "row",
                 alignItems: "center",
-                fontSize: 11,
+                fontSize: cfg.metaTextSize,
                 marginRight: 8,
                 color: "#000",
                 textDecoration: "none",
               }}
             >
               <Image
-                style={{ width: 12, height: 12, marginRight: 4 }}
+                style={{ width: 10, height: 10, marginRight: 3 }}
                 src={link.icon}
               />
               <Text>{link.title || link.link}</Text>
@@ -160,14 +173,16 @@ const PdfDocument = ({ data }) => {
             <View
               key={index}
               style={{
-                width: "48%",
-                marginBottom: 6,
+                width: "50%",
+                marginBottom: 3,
                 paddingRight: 6,
               }}
             >
-              <Text style={{ fontSize: 12, fontWeight: 600 }}>{category}</Text>
-              <Text style={{ fontSize: 11, lineHeight: 1.4 }}>
-                {skillsList.join(", ")}
+              <Text style={{ fontSize: cfg.bodyTextSize, fontWeight: "700", color: "#111" }}>
+                {category}:{" "}
+                <Text style={{ fontWeight: "normal", color: "#333" }}>
+                  {skillsList.join(", ")}
+                </Text>
               </Text>
             </View>
           ))}
@@ -176,87 +191,106 @@ const PdfDocument = ({ data }) => {
         {/* Work Experience */}
         {sectionTitle("Work Experience")}
         {work.map((job, index) => (
-          <View key={index} style={{ marginBottom: 8 }}>
+          <React.Fragment key={index}>
             <View
               style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
+                marginBottom: job.marginBottom !== undefined ? job.marginBottom : 6,
+                marginTop: job.marginTop !== undefined ? job.marginTop : 0,
               }}
             >
-              <Text style={{ fontSize: 13, fontWeight: 700 }}>
-                {job.company}
-              </Text>
-              <Text style={{ fontSize: 13, fontWeight: 700 }}>
-                {job.duration}
-              </Text>
-            </View>
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <Text style={{ fontSize: 12, color: "#333", fontWeight: 700 }}>
-                {job.role}
-              </Text>
-              <Text style={{ fontSize: 12, color: "#333", fontWeight: 700 }}>
-                {job.location}
-              </Text>
-            </View>
-            <View style={{ marginLeft: 10, marginTop: 4 }}>
-              {job.tasks.map((task, i) => (
-                <Text
-                  key={i}
-                  style={{
-                    fontSize: 12,
-                    marginBottom: 3,
-                    lineHeight: 1.4,
-                  }}
-                >
-                  • {task}
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                }}
+              >
+                <Text style={{ flex: 1, paddingRight: 10, fontSize: cfg.subHeadingSize, fontWeight: "700", color: "#000" }}>
+                  {job.role} — <Text style={{ fontWeight: "600", color: "#333" }}>{job.company}</Text>
                 </Text>
-              ))}
+                <Text style={{ fontSize: cfg.metaTextSize, fontWeight: "600", color: "#444", textAlign: "right" }}>
+                  {job.duration} | {job.location}
+                </Text>
+              </View>
+              <View style={{ marginLeft: 6, marginTop: 2 }}>
+                {job.tasks.map((task, i) => (
+                  <Text
+                    key={i}
+                    style={{
+                      fontSize: cfg.bodyTextSize,
+                      marginBottom: 1.5,
+                      lineHeight: cfg.lineHeight,
+                      color: "#222",
+                    }}
+                  >
+                    • {task}
+                  </Text>
+                ))}
+              </View>
             </View>
-          </View>
+            {(job.pageBreakAfter || job.pageBreak) && <View break />}
+          </React.Fragment>
         ))}
 
         {/* Personal Projects */}
         {personalProjects.length > 0 && (
           <>
-            {sectionTitle("Personal Projects")}
+            {sectionTitle("Projects")}
             {personalProjects.map((project, index) => (
-              <View key={index} style={{ marginBottom: 8 }}>
-                <Text style={{ fontSize: 13, fontWeight: 800 }}>
-                  {project.title}
-                </Text>
-
-                <Text style={{ fontSize: 12, color: "#333" }}>
-                  {project.duration}
-                </Text>
-
-                <Text style={{ fontSize: 12, marginBottom: 3 }}>
-                  {project.description}
-                </Text>
-
-                {project.highlights?.map((point, i) => (
-                  <Text key={i} style={{ fontSize: 12, marginLeft: 10 }}>
-                    • {point}
-                  </Text>
-                ))}
-
-                <Text style={{ fontSize: 11, marginTop: 3 }}>
-                  Tech: {project.techUsed?.join(", ")}
-                </Text>
-
-                {project.link && (
-                  <Link
-                    src={project.link}
-                    style={{ fontSize: 11, color: "#000" }}
+              <React.Fragment key={index}>
+                <View
+                  style={{
+                    marginBottom: project.marginBottom !== undefined ? project.marginBottom : 5,
+                    marginTop: project.marginTop !== undefined ? project.marginTop : 0,
+                  }}
+                >
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                    }}
                   >
-                    {project.link}
-                  </Link>
-                )}
-              </View>
+                    <Text style={{ flex: 1, paddingRight: 10, fontSize: cfg.subHeadingSize, fontWeight: "700", color: "#000" }}>
+                      {project.title}
+                      {project.techUsed && (
+                        <Text style={{ fontSize: cfg.metaTextSize, fontWeight: "normal", color: "#555" }}>
+                          {" "}({project.techUsed.join(", ")})
+                        </Text>
+                      )}
+                    </Text>
+                    <Text style={{ fontSize: cfg.metaTextSize, color: "#444", textAlign: "right" }}>
+                      {project.duration}
+                    </Text>
+                  </View>
+
+                  <Text style={{ fontSize: cfg.bodyTextSize, color: "#222", marginTop: 1, lineHeight: cfg.lineHeight }}>
+                    {project.description}
+                  </Text>
+
+                  {project.highlights?.map((point, i) => (
+                    <Text key={i} style={{ fontSize: cfg.metaTextSize, color: "#333", marginLeft: 6, marginTop: 1 }}>
+                      • {point}
+                    </Text>
+                  ))}
+
+                  {project.link && (
+                    <Link
+                      src={project.link}
+                      style={{
+                        fontSize: cfg.metaTextSize,
+                        color: "#0d6efd",
+                        textDecoration: "none",
+                        marginTop: 1.5,
+                        marginLeft: 6,
+                      }}
+                    >
+                      Link: {project.link}
+                    </Link>
+                  )}
+                </View>
+                {(project.pageBreakAfter || project.pageBreak) && <View break />}
+              </React.Fragment>
             ))}
           </>
         )}
@@ -264,29 +298,30 @@ const PdfDocument = ({ data }) => {
         {/* Education */}
         {sectionTitle("Education")}
         {education.map((edu, index) => (
-          <View key={index} style={{ marginBottom: 8 }}>
+          <View key={index} style={{ marginBottom: 5 }}>
             <View
               style={{
                 flexDirection: "row",
                 justifyContent: "space-between",
+                alignItems: "flex-start",
               }}
             >
-              <Text style={{ fontSize: 13 }}>{edu.school}</Text>
-              <Text style={{ fontSize: 13 }}>{edu.duration}</Text>
-            </View>
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <Text style={{ fontSize: 12, color: "#333" }}>
-                {edu.title}
-                {edu.major ? ` in ${edu.major}` : ""} ({edu.grade})
-              </Text>
-              <Text style={{ fontSize: 12, color: "#333" }}>
-                {edu.location}
-              </Text>
+              <View style={{ flex: 1, paddingRight: 10 }}>
+                <Text style={{ fontSize: cfg.subHeadingSize, fontWeight: "700", color: "#000" }}>
+                  {edu.title}{edu.major ? ` in ${edu.major}` : ""}{edu.grade ? ` (${edu.grade})` : ""}
+                </Text>
+                <Text style={{ fontSize: cfg.bodyTextSize, color: "#333", marginTop: 1 }}>
+                  {edu.school}
+                </Text>
+              </View>
+              <View style={{ alignItems: "flex-end" }}>
+                <Text style={{ fontSize: cfg.metaTextSize, fontWeight: "600", color: "#333" }}>
+                  {edu.duration}
+                </Text>
+                <Text style={{ fontSize: cfg.metaTextSize, color: "#555", marginTop: 1 }}>
+                  {edu.location}
+                </Text>
+              </View>
             </View>
           </View>
         ))}
@@ -299,9 +334,9 @@ const PdfDocument = ({ data }) => {
       <Page
         size="A4"
         style={{
-          paddingTop: 30,
-          paddingBottom: 30,
-          paddingHorizontal: 30,
+          paddingTop: cfg.pagePadding,
+          paddingBottom: cfg.pagePadding,
+          paddingHorizontal: cfg.pagePadding,
         }}
       >
         {renderSingleColumn({

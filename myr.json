@@ -1,11 +1,11 @@
 {
   "name": "Jayanthbharadwaj M",
-  "role": "Technical Lead | Full Stack Developer",
-  "description": "Technical Lead with 7+ years of experience building scalable backend systems, microservices, and multi-tenant platforms using Node.js and cloud technologies.",
+  "role": "Technical Lead | Senior Full Stack Developer",
+  "description": "Technical Lead & Senior Full Stack Developer with 8 years of experience architecting high-throughput backend systems, real-time IoT platforms, multi-tenant microservices, and modern web/mobile applications. Proven track record leading cross-functional teams, driving cloud security (Keycloak, Cognito, Azure AD), and delivering resilient enterprise architectures.",
   "contactDetails": {
     "mobile": "8892218173",
     "email": "jayanthbharadwajm@gmail.com",
-    "address": "Bengaluru",
+    "address": "Bengaluru, India",
     "links": [
       {
         "link": "https://www.linkedin.com/in/jayanthbharadwaj-m-814a5697/",
@@ -21,102 +21,187 @@
   },
   "skills": {
     "Programming Languages": [
-      "JavaScript",
+      "JavaScript (ES6+)",
       "TypeScript",
       "SQL",
       "Python",
+      "Kotlin",
       "Go",
       "PHP"
     ],
-    "Frameworks": [
+    "Frontend & Mobile": [
+      "React.js",
+      "React Native",
+      "React Context API",
+      "IndexedDB",
+      "HTML5 / CSS3",
+      "Vite",
+      "PWA"
+    ],
+    "Backend & Architecture": [
       "Node.js",
       "Express.js",
       "NestJS",
-      "React.js",
-      "React Native"
-    ],
-    "Architecture": [
-      "REST APIs",
+      "RESTful APIs",
+      "WebSockets",
+      "MQTT",
       "Microservices",
-      "Distributed Systems",
       "Event-Driven Architecture",
-      "Multi-Tenant Architecture"
+      "Multi-Tenant Systems"
     ],
-    "Databases & Caching": [
+    "Geospatial & Visualization": [
+      "MapLibre GL",
+      "PMTiles",
+      "Vector Tiles",
+      "GIS & Geospatial Dashboards"
+    ],
+    "Databases, Queues & Caching": [
       "PostgreSQL",
       "MySQL",
       "MongoDB",
-      "Redis",
       "SQLite",
-      "Firebase",
-      "Supabase"
+      "Redis",
+      "Kafka",
+      "Supabase",
+      "Firebase"
     ],
-    "Cloud & DevOps": [
-      "AWS (EC2, S3, RDS, Lambda)",
+    "Cloud, DevOps & Security": [
+      "AWS (EC2, S3, RDS, Lambda, Cognito)",
       "Azure",
+      "Cloudflare (Pages, Workers)",
+      "Keycloak (IAM / OIDC)",
       "Docker",
       "Nginx",
-      "PM2"
+      "PM2",
+      "Git"
     ],
-    "Tools": ["Git", "Postman", "Swagger (OpenAPI)", "Jira", "Confluence"]
+    "Methodologies & Tools": [
+      "System Design",
+      "Agile / Scrum",
+      "CI/CD Workflows",
+      "Postman",
+      "Swagger (OpenAPI)",
+      "Jira",
+      "Confluence"
+    ]
   },
   "work": [
     {
       "role": "Technical Lead",
       "company": "Truminds Software Systems",
       "duration": "11/2023 - Present",
-      "location": "Bengaluru",
+      "location": "Bengaluru, India",
       "tasks": [
-        "Architected multi-tenant microservices platforms with automated tenant provisioning (DB, schema, domain).",
-        "Built scalable backend systems using Node.js, PostgreSQL, Redis, and Kafka for real-time processing.",
-        "Developed REST APIs and event-driven systems for device management and data ingestion.",
-        "Led migration of legacy systems to microservices using JSON-driven APIs.",
-        "Implemented authentication using AWS Cognito and Azure AD with MFA and passkeys.",
-        "Optimized performance using Redis caching and database query tuning."
+        "Led and mentored a cross-functional engineering team of 15 developers (5 direct reports) across system architecture, sprint execution, technical reviews, and engineering best practices.",
+        "Architected and deployed a smart city Lighting Management System (LMS) orchestrating 10,000+ connected smart lamps, ingesting hourly telemetry data with high reliability and zero data loss for over 1 year.",
+        "Engineered a centralized IoT Control Tower managing heterogeneous devices (Edge Gateways, CCTV Cameras, Smart Display Boards, Lamps) over MQTT, WebSockets, and REST APIs, including ONVIF camera discovery POCs.",
+        "Architected interactive Map Dashboards and geospatial analytics using MapLibre GL, and evaluated vector tiles with PMTiles for offline/low-bandwidth map rendering.",
+        "Extended enterprise Identity & Access Management (IAM) with on-premise Keycloak integration alongside cloud identity (AWS Cognito, Azure AD, MFA, passkeys, and RBAC).",
+        "Designed automated multi-tenant provisioning pipelines (database, schema, custom subdomains) and optimized PostgreSQL/Redis query performance, reducing API response times.",
+        "Implemented event-driven processing pipelines using Apache Kafka and Redis for real-time alert dispatching, telemetry processing, and automated device workflow triggers."
       ]
     },
     {
       "role": "Senior Development Engineer-2",
       "company": "Truminds Software Systems",
       "duration": "11/2022 - 11/2023",
-      "location": "Bengaluru",
+      "location": "Bengaluru, India",
+      "pageBreakAfter": true,
       "tasks": [
-        "Led frontend development for real-time dashboard using React.js and WebSockets.",
-        "Built REST APIs and JSON-driven UI components for scalable dashboards.",
-        "Implemented authentication using AWS Cognito with multi-tenant support.",
-        "Developed migration service for AWS resource provisioning and data transfer."
+        "Led frontend engineering for real-time device monitoring dashboards using React.js, TypeScript, Context API, and WebSockets.",
+        "Engineered low-latency WebSocket display engine for Smart Pole digital signage boards, supporting real-time content broadcast and automated scheduling.",
+        "Implemented multi-tenant authentication and user lifecycle management utilizing AWS Cognito with fine-grained role-based access control.",
+        "Developed automated data migration and cloud infrastructure provisioning services across AWS environments, ensuring zero downtime during data transitions."
       ]
     },
     {
       "role": "Associate Software Engineer",
       "company": "Brigosha Technologies",
       "duration": "10/2021 - 11/2022",
-      "location": "Bengaluru",
+      "location": "Bengaluru, India",
       "tasks": [
-        "Developed backend REST APIs for EdTech platform (user and payment workflows).",
-        "Built notification services using SMTP and SMS APIs.",
-        "Optimized API performance and database queries."
+        "Served as backend developer for EdTech platform (Aulas), architecting core REST APIs for user registration, onboarding, and role-based profiles.",
+        "Implemented end-to-end fee management and payment processing workflows integrating Cashfree gateway and automated fee collection links.",
+        "Built automated multi-channel notification microservices (SMTP/SMS) and optimized database queries on PostgreSQL/MySQL."
       ]
     },
     {
       "role": "Product Developer",
       "company": "Camp Automation",
       "duration": "10/2018 - 10/2021",
-      "location": "Bengaluru",
+      "location": "Bengaluru, India",
       "tasks": [
-        "Developed web applications using PHP, Node.js, and React.",
-        "Built and published React Native apps on Play Store and App Store.",
-        "Improved performance and resolved security issues."
+        "Developed full-stack web applications using PHP, Node.js, and React.",
+        "Designed and implemented cross-platform mobile applications using React Native, published on Google Play Store and Apple App Store.",
+        "Managed database users and schemas (MySQL), ensuring high availability, smooth operation, and data integrity.",
+        "Written automated deployment and build scripts, reducing release turnaround time by 30%."
       ]
     },
     {
-      "role": "Intern",
+      "role": "Software Intern",
       "company": "Augplat Technologies",
       "duration": "08/2018 - 10/2018",
-      "location": "Bengaluru",
+      "location": "Bengaluru, India",
       "tasks": [
-        "Supported web application development and database-related tasks under senior engineer guidance."
+        "Contributed to full-stack web application development and database maintenance under senior engineering mentorship."
       ]
+    }
+  ],
+  "personalProjects": [
+    {
+      "title": "PDF Resume Generator",
+      "description": "JSON-driven ATS-optimized resume generator with dynamic schema parsing, live preview, and high-fidelity PDF export.",
+      "highlights": [
+        "Engineered modular React architecture with Vite and @react-pdf/renderer",
+        "Built real-time PDF generation and instant local schema validation"
+      ],
+      "link": "https://github.com/Jayanthbm/pdf-resume",
+      "duration": "2025 - Present",
+      "techUsed": ["React", "Vite", "@react-pdf/renderer", "JavaScript"]
+    },
+    {
+      "title": "Stothram – Devotional Mobile App & PWA",
+      "description": "Offline-first devotional mobile application with local caching and fast search across large multilingual datasets.",
+      "highlights": [
+        "Architected offline-first client storage utilizing IndexedDB and custom JSON indexing",
+        "Published cross-platform Android application on Google Play Store alongside responsive PWA"
+      ],
+      "link": "https://play.google.com/store/apps/details?id=com.jayanth.shotram",
+      "duration": "07/2020 - Present",
+      "techUsed": ["React Native", "PWA", "IndexedDB", "JSON"]
+    },
+    {
+      "title": "material-loader-react-native",
+      "description": "Open-source animated loader component library for React Native following Google Material Design 3 guidelines.",
+      "highlights": [
+        "Published npm package with TypeScript declarations and zero external UI dependencies",
+        "Achieved fluid 60fps native thread animations using React Native Reanimated and SVG"
+      ],
+      "link": "https://www.npmjs.com/package/material-loader-react-native",
+      "duration": "10/2025",
+      "techUsed": ["React Native", "Reanimated", "SVG", "TypeScript"]
+    },
+    {
+      "title": "Trip Itinerary Planner",
+      "description": "Interactive travel itinerary and route planning web app deployed on Cloudflare Pages.",
+      "highlights": [
+        "Dynamic day-by-day itinerary planning and route visualization",
+        "Deployed with automated CI/CD on Cloudflare Pages"
+      ],
+      "link": "https://trip-itinerary-3f0.pages.dev/",
+      "duration": "2025",
+      "techUsed": ["React", "Vite", "Cloudflare Pages", "JavaScript"]
+    },
+    {
+      "title": "JMoney & JmoneyWear – Expense Tracker",
+      "description": "Full-stack personal finance tracker with cloud database synchronization and Wear OS smartwatch companion app.",
+      "highlights": [
+        "Built full-stack React web app with Supabase for realtime auth and row-level security",
+        "Developed companion Wear OS smartwatch application using Kotlin for rapid on-the-go expense logging"
+      ],
+      "link": "https://jayanthbm.github.io/jmoney/",
+      "duration": "04/2025 - Present",
+      "techUsed": ["React", "Vite", "Supabase", "WearOS", "Kotlin"]
     }
   ],
   "education": [
@@ -125,7 +210,6 @@
       "school": "Bangalore Institute of Technology",
       "location": "Bengaluru",
       "duration": "08/2015 - 06/2018",
-      "grade": "53%",
       "major": "Information Science"
     },
     {
@@ -133,48 +217,7 @@
       "school": "PES Polytechnic",
       "location": "Bengaluru",
       "duration": "06/2012 - 06/2015",
-      "grade": "70%",
       "major": "Computer Science"
-    }
-  ],
-  "personalProjects": [
-    {
-      "title": "PDF Resume Generator",
-      "description": "JSON-based resume generator with live preview and PDF export.",
-      "highlights": [
-        "Designed dynamic JSON schema",
-        "Implemented PDF preview and download"
-      ],
-      "link": "https://github.com/Jayanthbm/pdf-resume",
-      "duration": "2025 - Present",
-      "techUsed": ["React", "Vite", "@react-pdf/renderer"]
-    },
-    {
-      "title": "Stothram – Devotional Mobile App & PWA",
-      "description": "Offline-first devotional app (Android + PWA).",
-      "highlights": [
-        "JSON-based offline architecture",
-        "Published Android app"
-      ],
-      "link": "https://play.google.com/store/apps/details?id=com.jayanth.shotram",
-      "duration": "07/2020 - Present",
-      "techUsed": ["React Native", "PWA", "JSON"]
-    },
-    {
-      "title": "material-loader-react-native",
-      "description": "Animated loader for React Native (Material Design 3).",
-      "highlights": ["Published npm package", "High-performance animations"],
-      "link": "https://www.npmjs.com/package/material-loader-react-native",
-      "duration": "10/2025",
-      "techUsed": ["React Native", "Reanimated", "SVG"]
-    },
-    {
-      "title": "JMoney – Personal Expense Tracker",
-      "description": "Personal expense tracker using React and Supabase.",
-      "highlights": ["Full-stack app with Supabase", "Responsive UI"],
-      "link": "https://github.com/Jayanthbm",
-      "duration": "04/2025 - Present",
-      "techUsed": ["React", "Vite", "Supabase"]
     }
   ]
 }
