@@ -1,7 +1,7 @@
 {
   "name": "Jayanthbharadwaj M",
   "role": "Technical Lead | Senior Full Stack Developer",
-  "description": "Technical Lead & Senior Full Stack Developer with 8 years of experience architecting high-throughput backend systems, real-time IoT platforms, multi-tenant microservices, and modern web/mobile applications. Proven track record leading cross-functional teams, driving cloud security (Keycloak, Cognito, Azure AD), and delivering resilient enterprise architectures.",
+  "description": "Technical Lead & Senior Full Stack Developer with 8 years of experience designing scalable backend systems, real-time IoT platforms, multi-tenant microservices, and modern web/mobile applications.",
   "contactDetails": {
     "mobile": "8892218173",
     "email": "jayanthbharadwajm@gmail.com",
@@ -92,13 +92,11 @@
       "duration": "11/2023 - Present",
       "location": "Bengaluru, India",
       "tasks": [
-        "Led and mentored a cross-functional engineering team of 15 developers (5 direct reports) across system architecture, sprint execution, technical reviews, and engineering best practices.",
-        "Architected and deployed a smart city Lighting Management System (LMS) orchestrating 10,000+ connected smart lamps, ingesting hourly telemetry data with high reliability and zero data loss for over 1 year.",
-        "Engineered a centralized IoT Control Tower managing heterogeneous devices (Edge Gateways, CCTV Cameras, Smart Display Boards, Lamps) over MQTT, WebSockets, and REST APIs, including ONVIF camera discovery POCs.",
+        "Led and mentored a cross-functional engineering team of 15 developers (5 direct reports) across system architecture, sprint delivery, and code reviews.",
+        "Architected and deployed a smart city Lighting Management System (LMS) orchestrating 10,000+ connected smart lamps, ingesting hourly telemetry data with zero data loss in production for 1+ year.",
+        "Built a centralized IoT Control Tower managing heterogeneous devices (Edge Gateways, CCTV Cameras, Smart Display Boards, Lamps) via MQTT, WebSockets, and REST APIs.",
         "Architected interactive Map Dashboards and geospatial analytics using MapLibre GL, and evaluated vector tiles with PMTiles for offline/low-bandwidth map rendering.",
-        "Extended enterprise Identity & Access Management (IAM) with on-premise Keycloak integration alongside cloud identity (AWS Cognito, Azure AD, MFA, passkeys, and RBAC).",
-        "Designed automated multi-tenant provisioning pipelines (database, schema, custom subdomains) and optimized PostgreSQL/Redis query performance, reducing API response times.",
-        "Implemented event-driven processing pipelines using Apache Kafka and Redis for real-time alert dispatching, telemetry processing, and automated device workflow triggers."
+        "Extended enterprise Identity & Access Management (IAM) with on-premise Keycloak integration alongside cloud identity (AWS Cognito, Azure AD, MFA, passkeys, and RBAC)."
       ]
     },
     {
@@ -106,12 +104,10 @@
       "company": "Truminds Software Systems",
       "duration": "11/2022 - 11/2023",
       "location": "Bengaluru, India",
-      "pageBreakAfter": true,
       "tasks": [
         "Led frontend engineering for real-time device monitoring dashboards using React.js, TypeScript, Context API, and WebSockets.",
         "Engineered low-latency WebSocket display engine for Smart Pole digital signage boards, supporting real-time content broadcast and automated scheduling.",
-        "Implemented multi-tenant authentication and user lifecycle management utilizing AWS Cognito with fine-grained role-based access control.",
-        "Developed automated data migration and cloud infrastructure provisioning services across AWS environments, ensuring zero downtime during data transitions."
+        "Implemented multi-tenant authentication with AWS Cognito and developed automated cloud migration services ensuring zero downtime during transitions."
       ]
     },
     {
@@ -119,6 +115,7 @@
       "company": "Brigosha Technologies",
       "duration": "10/2021 - 11/2022",
       "location": "Bengaluru, India",
+      "pageBreakAfter": true,
       "tasks": [
         "Served as backend developer for EdTech platform (Aulas), architecting core REST APIs for user registration, onboarding, and role-based profiles.",
         "Implemented end-to-end fee management and payment processing workflows integrating Cashfree gateway and automated fee collection links.",
@@ -134,7 +131,7 @@
         "Developed full-stack web applications using PHP, Node.js, and React.",
         "Designed and implemented cross-platform mobile applications using React Native, published on Google Play Store and Apple App Store.",
         "Managed database users and schemas (MySQL), ensuring high availability, smooth operation, and data integrity.",
-        "Written automated deployment and build scripts, reducing release turnaround time by 30%."
+        "Developed automated deployment and build scripts, reducing release turnaround time by 30%."
       ]
     },
     {
@@ -171,28 +168,6 @@
       "techUsed": ["React Native", "PWA", "IndexedDB", "JSON"]
     },
     {
-      "title": "material-loader-react-native",
-      "description": "Open-source animated loader component library for React Native following Google Material Design 3 guidelines.",
-      "highlights": [
-        "Published npm package with TypeScript declarations and zero external UI dependencies",
-        "Achieved fluid 60fps native thread animations using React Native Reanimated and SVG"
-      ],
-      "link": "https://www.npmjs.com/package/material-loader-react-native",
-      "duration": "10/2025",
-      "techUsed": ["React Native", "Reanimated", "SVG", "TypeScript"]
-    },
-    {
-      "title": "Trip Itinerary Planner",
-      "description": "Interactive travel itinerary and route planning web app deployed on Cloudflare Pages.",
-      "highlights": [
-        "Dynamic day-by-day itinerary planning and route visualization",
-        "Deployed with automated CI/CD on Cloudflare Pages"
-      ],
-      "link": "https://trip-itinerary-3f0.pages.dev/",
-      "duration": "2025",
-      "techUsed": ["React", "Vite", "Cloudflare Pages", "JavaScript"]
-    },
-    {
       "title": "JMoney & JmoneyWear – Expense Tracker",
       "description": "Full-stack personal finance tracker with cloud database synchronization and Wear OS smartwatch companion app.",
       "highlights": [
@@ -202,6 +177,34 @@
       "link": "https://jayanthbm.github.io/jmoney/",
       "duration": "04/2025 - Present",
       "techUsed": ["React", "Vite", "Supabase", "WearOS", "Kotlin"]
+    },
+    {
+      "title": "Open-Source Utilities & Exploratory Projects",
+      "description": "Developed multiple interactive web tools and automations including Trip Itinerary Planner (Cloudflare Pages), WhatsApp Invite Automation, and event ticketing utilities.",
+      "highlights": [
+        "Collection of open-source tools, live web applications, and developer experiments"
+      ],
+      "link": "https://github.com/Jayanthbm",
+      "duration": "2020 - Present",
+      "techUsed": ["React", "Node.js", "Cloudflare Pages"]
+    }
+  ],
+  "technicalHighlights": [
+    {
+      "category": "Open Source",
+      "description": "Published React Native component library on npm with TypeScript declarations and zero external UI dependencies."
+    },
+    {
+      "category": "Performance",
+      "description": "Achieved 60fps native-thread animations using Reanimated and SVG."
+    },
+    {
+      "category": "IoT Scale",
+      "description": "Architected production systems managing 10,000+ connected smart lamps with zero data loss for 1+ year."
+    },
+    {
+      "category": "Security & Cloud",
+      "description": "Experience with AWS, Azure, Cloudflare, Keycloak, Cognito, RBAC, MFA, and passkeys."
     }
   ],
   "education": [

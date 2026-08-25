@@ -21,28 +21,30 @@ const DEFAULT_STYLES = {
   pagePadding: 24,
 };
 
-const PdfDocument = ({ data, customStyles = {} }) => {
+const PdfDocument = ({ data = {}, customStyles = {} }) => {
   const cfg = { ...DEFAULT_STYLES, ...customStyles };
   const {
     name,
     role,
     description,
-    contactDetails,
-    skills,
-    work,
-    education,
+    contactDetails = {},
+    skills = {},
+    work = [],
+    education = [],
     personalProjects = [],
-  } = data;
+    technicalHighlights = [],
+  } = data || {};
 
   const renderSingleColumn = ({
     name,
     role,
     description,
-    contactDetails,
-    skills,
-    work,
-    personalProjects,
-    education,
+    contactDetails = {},
+    skills = {},
+    work = [],
+    personalProjects = [],
+    education = [],
+    technicalHighlights = [],
   }) => {
     const { mobile, email, links } = contactDetails;
 
@@ -188,8 +190,8 @@ const PdfDocument = ({ data, customStyles = {} }) => {
           ))}
         </View>
 
-        {/* Work Experience */}
-        {sectionTitle("Work Experience")}
+        {/* Professional Experience */}
+        {sectionTitle("Professional Experience")}
         {work.map((job, index) => (
           <React.Fragment key={index}>
             <View
@@ -295,6 +297,29 @@ const PdfDocument = ({ data, customStyles = {} }) => {
           </>
         )}
 
+        {/* Additional Technical Highlights */}
+        {technicalHighlights && technicalHighlights.length > 0 && (
+          <>
+            {sectionTitle("Technical Highlights & Key Achievements")}
+            <View style={{ marginTop: 2, marginLeft: 6 }}>
+              {technicalHighlights.map((item, index) => (
+                <Text
+                  key={index}
+                  style={{
+                    fontSize: cfg.bodyTextSize,
+                    marginBottom: 2,
+                    lineHeight: cfg.lineHeight,
+                    color: "#222",
+                  }}
+                >
+                  • <Text style={{ fontWeight: "700", color: "#000" }}>{item.category}: </Text>
+                  {item.description}
+                </Text>
+              ))}
+            </View>
+          </>
+        )}
+
         {/* Education */}
         {sectionTitle("Education")}
         {education.map((edu, index) => (
@@ -348,6 +373,7 @@ const PdfDocument = ({ data, customStyles = {} }) => {
           work,
           personalProjects,
           education,
+          technicalHighlights,
         })}
       </Page>
     </Document>
