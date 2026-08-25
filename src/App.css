@@ -119,3 +119,69 @@ input{
   font-size: 16px;
   margin-right: 5px;
 }
+
+.config-btn {
+  padding: 10px 16px;
+  border-radius: 5px;
+  border: 1px solid #198754;
+  background-color: #198754;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.config-btn:hover {
+  background-color: #157347;
+}
+
+.typography-panel {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 16px 20px;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.typography-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px 20px;
+}
+
+.typography-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.typography-item label {
+  font-size: 0.85rem;
+  color: #495057;
+  display: flex;
+  justify-content: space-between;
+}
+
+.typography-item input[type="range"] {
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.reset-btn {
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid #6c757d;
+  background: #fff;
+  color: #495057;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+  background: #6c757d;
+  color: #fff;
+}
