@@ -25,8 +25,6 @@
       "TypeScript",
       "SQL",
       "Python",
-      "Kotlin",
-      "Go",
       "PHP"
     ],
     "Frontend & Mobile": [
@@ -53,7 +51,8 @@
       "MapLibre GL",
       "PMTiles",
       "Vector Tiles",
-      "GIS & Geospatial Dashboards"
+      "Google Maps",
+      "Geospatial Dashboards"
     ],
     "Databases, Queues & Caching": [
       "PostgreSQL",
@@ -69,7 +68,7 @@
       "AWS (EC2, S3, RDS, Lambda, Cognito)",
       "Azure",
       "Cloudflare (Pages, Workers)",
-      "Keycloak (IAM / OIDC)",
+      "Keycloak (IAM)",
       "Docker",
       "Nginx",
       "PM2",
@@ -95,7 +94,7 @@
         "Led and mentored a cross-functional engineering team of 15 developers (5 direct reports) across system architecture, sprint delivery, and code reviews.",
         "Architected and deployed a smart city Lighting Management System (LMS) orchestrating 10,000+ connected smart lamps, ingesting hourly telemetry data with zero data loss in production for 1+ year.",
         "Built a centralized IoT Control Tower managing heterogeneous devices (Edge Gateways, CCTV Cameras, Smart Display Boards, Lamps) via MQTT, WebSockets, and REST APIs.",
-        "Architected interactive Map Dashboards and geospatial analytics using MapLibre GL, and evaluated vector tiles with PMTiles for offline/low-bandwidth map rendering.",
+        "Architected interactive map dashboards using MapLibre GL and developed a PMTiles proof of concept for offline and low-bandwidth map rendering.",
         "Extended enterprise Identity & Access Management (IAM) with on-premise Keycloak integration alongside cloud identity (AWS Cognito, Azure AD, MFA, passkeys, and RBAC)."
       ]
     },
