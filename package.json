@@ -13,12 +13,12 @@
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.9.0",
-    "react": "^19.2.8",
+    "react": "^19.3.0",
     "react-dom": "^19.2.8",
     "react-pdf": "^11.0.0"
   },
   "devDependencies": {
-    "@types/react": "^19.2.18",
+    "@types/react": "^19.3.0",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react-swc": "^4.3.3",
     "eslint": "^10.10.0",
